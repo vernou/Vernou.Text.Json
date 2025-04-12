@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Vernou.Text.Json.Tests/Vernou.Text.Json.Tests.csproj" />
+  <Project Path="Vernou.Text.Json/Vernou.Text.Json.csproj" />
+</Solution>
