@@ -1,15 +1,20 @@
+﻿using System.Text.Json;
 using Shouldly;
-using System.Text.Json;
 
-namespace Vernou.Text.Json.Tests;
+namespace Vernou.Text.Json.Tests.DictionaryJsonConverterTest;
 
-public class DictionaryJsonConverterTest
+public abstract class Base<T>
+    where T : class, IDictionary<string, object>
 {
     private static readonly JsonSerializerOptions _options;
 
-    static DictionaryJsonConverterTest()
+    static Base()
     {
-        _options = new() { Converters = { new DictionaryJsonConverter() } };
+        _options = new()
+        {
+            TypeInfoResolver = JsonSerializerOptions.Default.TypeInfoResolver,
+            Converters = { new DictionaryJsonConverter() }
+        };
         _options.MakeReadOnly();
     }
 
@@ -22,7 +27,7 @@ public class DictionaryJsonConverterTest
 
         // Act
 
-        var result = JsonSerializer.Deserialize<Dictionary<string, object>>(json, _options);
+        var result = JsonSerializer.Deserialize<T>(json, _options);
 
         // Assert
 
@@ -86,14 +91,14 @@ public class DictionaryJsonConverterTest
         );
     }
 
-    private static void Deserialize<T>(T expected, string json)
+    private static void Deserialize<E>(E expected, string json)
     {
         // Act
 
-        var result = JsonSerializer.Deserialize<Dictionary<string, object>>(json, _options);
+        var result = JsonSerializer.Deserialize<T>(json, _options);
 
         // Assert
 
-        result.ShouldNotBeNull()["value"].ShouldBeOfType<T>().ShouldBe(expected);
+        result.ShouldNotBeNull()["value"].ShouldBeOfType<E>().ShouldBe(expected);
     }
 }

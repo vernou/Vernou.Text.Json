@@ -7,8 +7,8 @@ public class DictionaryJsonConverter : JsonConverter<Dictionary<string, object?>
 {
     public override bool CanConvert(Type typeToConvert)
     {
-        return typeToConvert == typeof(Dictionary<string, object>)
-               || typeToConvert == typeof(Dictionary<string, object?>);
+        return typeToConvert == typeof(Dictionary<string, object>) ||
+            typeToConvert == typeof(IDictionary<string, object>);
     }
 
     public override Dictionary<string, object?> Read(
