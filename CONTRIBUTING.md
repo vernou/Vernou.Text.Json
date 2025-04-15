@@ -78,9 +78,9 @@ A short summary to describe promptly the modification in 100 characters maximum 
 
 **long description** (optional)
 
-A long description to describe explicitly the modification whitout size limit and in markdown. The long description isn't necessary if the short description is sufficient
+A long description to describe explicitly the modification in markdown whitout size limit. The long description isn't necessary if the short description is sufficient
 
-**metadata**
+**metadata** (optional)
 
 Many metadata in format `<key>: <value>`.
 
