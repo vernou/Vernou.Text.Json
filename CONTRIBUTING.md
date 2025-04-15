@@ -22,7 +22,7 @@ You can open a issue to report a bug or request a new feature. Before, it is bes
 
 You can submit a **pull request** by following this guidelines:
 
-1. Submit a issue by following [the above guidelines]((#issue)). Discussing upfront helps to ensure that the fix/feature can be accepted.
+1. Submit a issue by following [the above guidelines](#issue). Discussing upfront helps to ensure that the fix/feature can be accepted.
 2. [Fork](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo) the repository.
 3. In the forked repository, make the changes in a new git branch
 4. Modify the code, **including appropriate test cases**.
