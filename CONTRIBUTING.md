@@ -38,7 +38,7 @@ The coding rules are available in "*[.editorconfig](.editorconfig)*" and enforce
 
 ## <a name="commit"></a> Commit Message
 
-> This guidelines is only for commit on the main branches. Commits on development branches don't need to conform to this below guidelines.
+> These guidelines are only for commits on the main branches. Commits on development branches don't need to conform to the following guidelines.
 
 Commit messages follow [Conventional Commit](https://www.conventionalcommits.org). They should have the following format:
 ```
