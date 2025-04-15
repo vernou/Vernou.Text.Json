@@ -49,7 +49,7 @@ Commit messages follow [Conventional Commit](https://www.conventionalcommits.org
 <type>(<scope>): <short summary>
 <long description>(optional)
 <BLANK LINE>
-<metadata>
+<metadata>(optional)
 ```
 
 **type**
