@@ -8,15 +8,18 @@ This project welcomes contributions and suggestions. Here are the guidelines to 
 - [Coding Rules](#rules)
 - [Commit Message](#commit)
 
+
 ## <a name="question"></a> Got a Question or Problem?
 
 If you have a question or need help, you can ask in the discussion tab.
 
 > Please, do not open issues for general support questions as we want to keep issues for bug reports and feature requests.
 
+
 ## <a name="issue"></a> Report a bug or request a Feature
 
 You can open a issue to report a bug or request a new feature. Before, it is best to research whether a similar issue already exists. If a similar issue exists, you can upvote it with 👍 to show your interest. This may have an impact on the prioritization of their treatment.
+
 
 ## <a name="pull-request"></a> Submitting a Pull Request
 
@@ -35,6 +38,7 @@ You can submit a **pull request** by following this guidelines:
 ## <a name="rules"></a> Coding Rules
 
 The coding rules are available in "*[.editorconfig](.editorconfig)*" and enforced by [Roslyn](https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/overview). 
+
 
 ## <a name="commit"></a> Commit Message
 
