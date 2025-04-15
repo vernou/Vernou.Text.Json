@@ -1,49 +1,28 @@
-<!---
-Inspired by [Angular](https://github.com/angular/angular/blob/main/CONTRIBUTING.md)
--->
-
 # Contributing
 
 This project welcomes contributions and suggestions. Here are the guidelines to follow:
-- [Code of Conduct](#coc)
 - [Question or Problem?](#question)
-- [Issues and Bugs](#issue)
-- [Feature Requests](#feature)
-- [Submission Guidelines](#submit)
+- [Report a Bug](#issue)
+- [Request a Feature](#issue)
+- [Pull Request](#pull-request)
 - [Coding Rules](#rules)
-- [Commit Message Guidelines](#commit)
-
-## <a name="coc"></a> Code of Conduct
-
-Please read and follow the [Code of Conduct](WIP).
+- [Commit Message](#commit)
 
 ## <a name="question"></a> Got a Question or Problem?
 
 If you have a question or need help, you can ask in the discussion tab.
 
-> Please, do not open issues for general support questions as we want to keep GitHub issues for bug reports and feature requests.
+> Please, do not open issues for general support questions as we want to keep issues for bug reports and feature requests.
 
+## <a name="issue"></a> Report a bug or request a Feature
 
-## <a name="issue"></a> Found a Bug?
+You can open a issue to report a bug or request a new feature. Before, it is best to research whether a similar issue already exists. If a similar issue exists, you can upvote it with 👍 to show your interest. This may have an impact on the prioritization of their treatment.
 
-If you find a bug in the source code, you can report it in a issue.
-If you would like to *fix* it, please open a issue first.
+## <a name="pull-request"></a> Submitting a Pull Request
 
+You can submit a **pull request** by following this guidelines:
 
-## <a name="submit"></a> Submission Guidelines
-
-### <a name="submit-issue"></a> Submitting an Issue
-
-Before you submit an issue, please search if a similar issue already exists. In this case, you can upvote with 👍 the existing issue to help to prioritize issues.
-
-> Please, don't write "+1" comment. It is difficult to count them, so only 👍 will be taken into consideration.
-
-
-### <a name="submit-pr"></a> Submitting a Pull Request (PR)
-
-You can submit a pull request by following this guidelines:
-
-1. Submit a issue by following [the below guidelines]((#submit-issue)). Discussing upfront helps to ensure that the fix/feature can be accepted.
+1. Submit a issue by following [the above guidelines]((#issue)). Discussing upfront helps to ensure that the fix/feature can be accepted.
 2. [Fork](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo) the repository.
 3. In the forked repository, make the changes in a new git branch
 4. Modify the code, **including appropriate test cases**.
@@ -53,23 +32,59 @@ You can submit a pull request by following this guidelines:
 8. A huge thank you for your participation.
 
 
-TODO : Adapt next
-
 ## <a name="rules"></a> Coding Rules
-To ensure consistency throughout the source code, keep these rules in mind as you are working:
 
-* All features or bug fixes **must be tested** by one or more specs (unit-tests).
-* All public API methods **must be documented**.
-* We follow [Google's TypeScript Style Guide][ts-style-guide], but wrap all code at **100 characters**.
+The coding rules are available in "*[.editorconfig](.editorconfig)*" and enforced by [Roslyn](https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/overview). 
 
-   An automated formatter is available, see [DEVELOPER.md](contributing-docs/building-and-testing-angular.md#formatting-your-source-code).
+## <a name="commit"></a> Commit Message
 
+> This guidelines is only for commit on the main branches. Commits on development branches don't need to conform to this below guidelines.
 
-## <a name="commit"></a> Commit Message Guidelines
-
-We have very precise rules over how our Git commit messages must be formatted:
+Commit messages follow [Conventional Commit](https://www.conventionalcommits.org). They should have the following format:
 ```
 <type>(<scope>): <short summary>
+<long description>(optional)
+<BLANK LINE>
+<metadata>
 ```
 
-See [Commit Message Guidelines](wip) for details.
+**type**
+
+The type define the type of change. It must be one of the following:
+
+| Type      | Description                                       |
+|-----------|---------------------------------------------------|
+| **feat**  | A new feature                                     |
+| **fix**   | A bug fix                                         |
+| **chore** | A chore (refactoring, update dependency, ...)     |
+
+**scope**
+
+The scope define what is changed. It must be one of the following:
+
+| Scope     | Description                                         |
+|-----------|-----------------------------------------------------|
+| **lib**   | The source code (library, test, documentation, ...) |
+| **ci**    | CI/CD (Github Actions, SonarQube, ...)              |
+| **\***    | A little bit of everything                          |
+
+**short summary**
+
+A short summary to describe promptly the modification in 100 characters maximum and in present tense without period at the end.
+
+**long description** (optional)
+
+A long description to describe explicitly the modification whitout size limit and in markdown. The long description isn't necessary if the short description is sufficient
+
+**metadata**
+
+Many metadata in format `<key>: <value>`.
+
+Example :
+```
+feat(lib): Add DictionaryJsonConverter
+Add the class `DictionaryJsonConverter` to deserialize `Dictionary<string, object>`.
+
+GitHub PR: #4
+GitHub Issue: #3
+```
