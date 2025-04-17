@@ -4,10 +4,10 @@ This library extends **System.Text.Json**.
 
 ## Getting started
 
-Install the package [Vernou.Swashbuckle](https://www.nuget.org/packages/System.Text.Json) :
+Install the package [Vernou.Text.Json](https://www.nuget.org/packages/Vernou.Text.Json) :
 
 ```sh
-dotnet add package System.Text.Json
+dotnet add package Vernou.Text.Json
 ```
 
 ## Json Converter
