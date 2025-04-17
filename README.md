@@ -48,4 +48,4 @@ Console.WriteLine(dic["object"].GetType());  // Output: System.Collections.Gener
 Console.WriteLine(dic["array"].GetType());   // Output: System.Collections.Generic.List`1[System.Object]
 ```
 
-> `DictionaryJsonConverter` don't modify the serializer.
+> `DictionaryJsonConverter` doesn't modify the serializer.
