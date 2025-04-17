@@ -12,8 +12,7 @@ dotnet add package System.Text.Json
 
 ## Json Converter
 
-`JsonConvertre` extends the serializer to convert an object or value to or from JSON.
-
+`JsonConverter` extends the serializer to convert an object or value to or from JSON.
 ### DictionaryJsonConverter
 
 By default, `object` is deserialized to `JsonElement` :
