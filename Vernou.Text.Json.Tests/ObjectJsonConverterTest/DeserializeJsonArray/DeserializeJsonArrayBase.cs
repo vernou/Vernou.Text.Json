@@ -7,7 +7,7 @@ public abstract class DeserializeJsonArrayBase<T, E>
     where E : IEnumerable<object>
 {
     [Fact]
-    public void DeserializeEmptyJsonArrayTo()
+    public void DeserializeEmptyJsonArray()
     {
         // Arrange
 
@@ -24,7 +24,7 @@ public abstract class DeserializeJsonArrayBase<T, E>
     }
 
     [Fact]
-    public void DeserializeJsonArrayTo()
+    public void DeserializeJsonArray()
     {
         // Arrange
 

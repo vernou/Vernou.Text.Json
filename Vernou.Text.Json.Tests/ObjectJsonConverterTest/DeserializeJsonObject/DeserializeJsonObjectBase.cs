@@ -6,7 +6,7 @@ namespace Vernou.Text.Json.Tests.ObjectJsonConverterTest.DeserializeJsonObject;
 public abstract class DeserializeJsonObjectBase<T>
 {
     [Fact]
-    public void DeserializeEmptyObjectTo()
+    public void DeserializeEmptyObject()
     {
         // Arrange
 
@@ -23,7 +23,7 @@ public abstract class DeserializeJsonObjectBase<T>
     }
 
     [Fact]
-    public void DeserializeObjectTo()
+    public void DeserializeObject()
     {
         // Arrange
 
@@ -58,5 +58,43 @@ public abstract class DeserializeJsonObjectBase<T>
         dic["string"].ShouldBe("Hello");
         dic["array"].ShouldBeOfType<List<object>>().Count.ShouldBe(0);
         dic["object"].ShouldBeOfType<Dictionary<string, object>>().Count.ShouldBe(0);
+    }
+
+    [Fact]
+    public void DeserializeObjectWithNested()
+    {
+        // Arrange
+
+        var options = new JsonSerializerOptions { Converters = { new ObjectJsonConverter() } };
+        var json =
+            """
+            {
+              "child1": {
+                "child1-a": { },
+                "child1-b": { }
+              },
+              "child2": {
+                "child2-a": { },
+                "child2-b": { }
+              }
+            }
+            """;
+
+        // Act
+
+        var result = JsonSerializer.Deserialize<T>(json, options);
+
+        // Assert
+
+        var root = result.ShouldBeOfType<Dictionary<string, object>>();
+        root.Count.ShouldBe(2);
+        var child1 = root["child1"].ShouldBeOfType<Dictionary<string, object>>();
+        child1.Count.ShouldBe(2);
+        child1["child1-a"].ShouldBeOfType<Dictionary<string, object>>().ShouldBeEmpty();
+        child1["child1-b"].ShouldBeOfType<Dictionary<string, object>>().ShouldBeEmpty();
+        var child2 = root["child2"].ShouldBeOfType<Dictionary<string, object>>();
+        child2.Count.ShouldBe(2);
+        child2["child2-a"].ShouldBeOfType<Dictionary<string, object>>().ShouldBeEmpty();
+        child2["child2-b"].ShouldBeOfType<Dictionary<string, object>>().ShouldBeEmpty();
     }
 }
