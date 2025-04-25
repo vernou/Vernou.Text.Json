@@ -1,29 +1,12 @@
 ﻿using System.Text.Json;
 using Shouldly;
 
-namespace Vernou.Text.Json.Tests.ObjectJsonConverterTest;
+namespace Vernou.Text.Json.Tests.ObjectJsonConverterTest.DeserializeJsonObject;
 
-public class DeserializeJsonObject
+public abstract class DeserializeJsonObjectBase<T>
 {
     [Fact]
-    public void DeserializeEmptyObjectToObject()
-    {
-        DeserializeEmptyObjectTo<object>();
-    }
-
-    [Fact]
-    public void DeserializeEmptyObjectToDictionary()
-    {
-        DeserializeEmptyObjectTo<Dictionary<string, object>>();
-    }
-
-    [Fact]
-    public void DeserializeEmptyObjectToIDictionary()
-    {
-        DeserializeEmptyObjectTo<IDictionary<string, object>>();
-    }
-
-    private static void DeserializeEmptyObjectTo<T>()
+    public void DeserializeEmptyObjectTo()
     {
         // Arrange
 
@@ -40,24 +23,7 @@ public class DeserializeJsonObject
     }
 
     [Fact]
-    public void DeserializeObjectToObject()
-    {
-        DeserializeObjectTo<object>();
-    }
-
-    [Fact]
-    public void DeserializeObjectToDictionary()
-    {
-        DeserializeObjectTo<Dictionary<string, object>>();
-    }
-
-    [Fact]
-    public void DeserializeObjectToIDictionary()
-    {
-        DeserializeObjectTo<IDictionary<string, object>>();
-    }
-
-    private static void DeserializeObjectTo<T>()
+    public void DeserializeObjectTo()
     {
         // Arrange
 

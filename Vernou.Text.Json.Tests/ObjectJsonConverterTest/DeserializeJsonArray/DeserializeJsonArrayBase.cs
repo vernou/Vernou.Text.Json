@@ -1,18 +1,13 @@
 ﻿using System.Text.Json;
 using Shouldly;
 
-namespace Vernou.Text.Json.Tests.ObjectJsonConverterTest;
+namespace Vernou.Text.Json.Tests.ObjectJsonConverterTest.DeserializeJsonArray;
 
-public class DeserializeJsonArray
+public abstract class DeserializeJsonArrayBase<T, E>
+    where E : IEnumerable<object>
 {
-
     [Fact]
-    public void DeserializeEmptyJsonArrayToObject()
-    {
-        DeserializeEmptyJsonArrayTo<object>();
-    }
-
-    private void DeserializeEmptyJsonArrayTo<T>()
+    public void DeserializeEmptyJsonArrayTo()
     {
         // Arrange
 
@@ -25,41 +20,11 @@ public class DeserializeJsonArray
 
         // Assert
 
-        result.ShouldBeOfType<List<object>>().ShouldBeEmpty();
+        result.ShouldBeOfType<E>().ShouldBeEmpty();
     }
 
     [Fact]
-    public void DeserializeJsonArrayToObject()
-    {
-        DeserializeJsonArrayTo<object, List<object>>();
-    }
-
-    [Fact]
-    public void DeserializeJsonArrayToIEnumerable()
-    {
-        DeserializeJsonArrayTo<IEnumerable<object>, List<object>>();
-    }
-
-    [Fact]
-    public void DeserializeJsonArrayToList()
-    {
-        DeserializeJsonArrayTo<List<object>>();
-    }
-
-    [Fact]
-    public void DeserializeJsonArrayToArray()
-    {
-        DeserializeJsonArrayTo<object[]>();
-    }
-
-    private void DeserializeJsonArrayTo<T>()
-        where T : IEnumerable<object>
-    {
-        DeserializeJsonArrayTo<T, T>();
-    }
-
-    private void DeserializeJsonArrayTo<T, E>()
-        where E : IEnumerable<object>
+    public void DeserializeJsonArrayTo()
     {
         // Arrange
 
@@ -92,6 +57,5 @@ public class DeserializeJsonArray
         list.ElementAt(4).ShouldBe(42.69m);
         list.ElementAt(5).ShouldBe("Hello");
         list.ElementAt(6).ShouldBeOfType<Dictionary<string, object>>().ShouldBeEmpty();
-
     }
 }
