@@ -3,13 +3,18 @@ using System.Text.Json;
 
 namespace Vernou.Text.Json;
 
+/// <summary>
+/// A custom JSON converter for handling <see cref="object"/>.
+/// </summary>
 public class ObjectJsonConverter : JsonConverter<object?>
 {
+    /// <inheritdoc/>
     public override bool CanConvert(Type typeToConvert)
     {
         return typeToConvert == typeof(object);
     }
 
+    /// <inheritdoc/>
     public override object? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
         switch (reader.TokenType)
@@ -67,6 +72,7 @@ public class ObjectJsonConverter : JsonConverter<object?>
         }
     }
 
+    /// <inheritdoc/>
     public override void Write(Utf8JsonWriter writer, object? value, JsonSerializerOptions options)
     {
 #pragma warning disable CA1869 // Cache and reuse 'JsonSerializerOptions' instances

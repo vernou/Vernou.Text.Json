@@ -13,17 +13,12 @@ dotnet add package Vernou.Text.Json
 ## Json Converter
 
 `JsonConverter` extends the serializer to convert an object or value to or from JSON.
-### DictionaryJsonConverter
 
-By default, `object` is deserialized to `JsonElement` :
-```
-var json = """{ "integer": 42 }""";
-var dic = JsonSerializer.Deserialize<Dictionary<string, object>>(json);
-Console.WriteLine(dic["integer"].GetType());
-// Output: System.Text.Json.JsonElement
-```
+### OjbectJsonConverter
 
-With `DictionaryJsonConverter`, `object` is deserialized to the CLR type :
+`OjbectJsonConverter` is a `JsonConverter` that deserialize from json to `object`. It is mainly used to deserialize a collection containing multiple types, such `IEnumerable<object>` or `IDictionary<string, object>`.
+
+Example :
 ```
 var json =
     """
@@ -48,4 +43,12 @@ Console.WriteLine(dic["object"].GetType());  // Output: System.Collections.Gener
 Console.WriteLine(dic["array"].GetType());   // Output: System.Collections.Generic.List`1[System.Object]
 ```
 
-> `DictionaryJsonConverter` doesn't modify the serializer.
+> `ObjectJsonConverter` has no impact on the serialization.
+
+## Contributing
+
+All contributions are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for details on how to contribute to this project.
+
+## License
+
+This project is licensed under the [MIT](LICENSE) License.
