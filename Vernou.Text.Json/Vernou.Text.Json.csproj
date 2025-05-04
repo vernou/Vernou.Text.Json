@@ -10,7 +10,7 @@
   <!-- NuGet Metadata -->
   <PropertyGroup>
     <Authors>Cédric VERNOU</Authors>
-    <Version>0.0.0-alpha</Version>
+    <Version>0.0.0-alpha.1</Version>
     <Description>Extends System.Text.Json</Description>
     <PackageProjectUrl>https://github.com/vernou/Vernou.Text.Json</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -29,7 +29,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\README.md" Pack="true" PackagePath="" />
+    <None Include="..\nuget\README.md" Pack="true" PackagePath="" />
     <None Include="..\nuget\icon.png" Pack="true" PackagePath="" />
   </ItemGroup>
 
